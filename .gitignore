@@ -4,7 +4,8 @@
 # Prerequisites
 *.d
 
-# Object files
+# Object files/dirs
+.build/
 *.o
 *.ko
 *.obj
