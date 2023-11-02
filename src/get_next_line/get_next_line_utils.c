@@ -6,13 +6,13 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/09 18:26:50 by mademir       #+#    #+#                 */
-/*   Updated: 2023/10/28 15:52:51 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/02 12:38:06 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*gl_strjoin(const char *s1, const char *s2)
+char	*gnl_strjoin(const char *s1, const char *s2)
 {
 	char	*str;
 	size_t	s1_len;
@@ -30,7 +30,7 @@ char	*gl_strjoin(const char *s1, const char *s2)
 	return (str);
 }
 
-char	*gl_substr(char const *s, unsigned int start, size_t len)
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/09 18:26:40 by mademir       #+#    #+#                 */
-/*   Updated: 2023/10/28 16:15:54 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/02 12:37:51 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 char	*get_next_line(int fd);
 
 // Modified version of ft_strjoin() that now has free() functionality
-char	*gl_strjoin(char const *s1, char const *s2);
+char	*gnl_strjoin(char const *s1, char const *s2);
 
 // Modified version of ft_substr() that now has free() functionality
-char	*gl_substr(char const *s, unsigned int start, size_t len);
+char	*gnl_substr(char const *s, unsigned int start, size_t len);
 
 #endif

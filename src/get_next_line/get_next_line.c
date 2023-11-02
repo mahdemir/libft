@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/09 18:26:47 by mademir       #+#    #+#                 */
-/*   Updated: 2023/10/28 16:30:59 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/02 12:38:14 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char	*rem_line(char *line)
 		free(line);
 		return (NULL);
 	}
-	line = gl_substr(line, (pos_nl + 1), (len - pos_nl - 1));
+	line = gnl_substr(line, (pos_nl + 1), (len - pos_nl - 1));
 	return (line);
 }
 
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 		if (bytes_read <= 0)
 			break ;
 		buff[bytes_read] = '\0';
-		line = gl_strjoin(line, buff);
+		line = gnl_strjoin(line, buff);
 	}
 	free(buff);
 	till_nl = fix_line(line);
