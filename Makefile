@@ -1,16 +1,16 @@
 ##### FONT APPEARANCE ##########################################################
-END=$'\x1b[0m
-BOLD=$'\x1b[1m
-UNDER=$'\x1b[4m
-REV=$'\x1b[7m
-GREY=$'\x1b[30m
-RED=$'\x1b[31m
-GREEN=$'\x1b[32m
-YELLOW=$'\x1b[33m
-BLUE=$'\x1b[34m
-PURPLE=$'\x1b[35m
-CYAN=$'\x1b[36m
-WHITE=$'\x1b[37m
+END=$'\033[0m
+BOLD=$'\033[1m
+UNDER=$'\033[4m
+REV=$'\033[7m
+GREY=$'\033[30m
+RED=$'\033[31m
+GREEN=$'\033[32m
+YELLOW=$'\033[33m
+BLUE=$'\033[34m
+PURPLE=$'\033[35m
+CYAN=$'\033[36m
+WHITE=$'\033[37m
 
 ##### PROCESS CALCULATOR #######################################################
 ifneq ($(words $(MAKECMDGOALS)),1)
@@ -118,9 +118,9 @@ NAME	= libft.a
 
 ##### RULES ####################################################################
 $(NAME): $(OBJ)
-	@printf "\033[1;32m"	
+	@printf "$(GREEN)$(BOLD)"	
 	@$(ECHO) 'Creation of $@ 🏁'
-	@printf "\033[0m"
+	@printf "$(END)"
 	@ar -rcs $@ $^
 
 all: $(NAME)
@@ -148,15 +148,15 @@ re: fclean
 	@$(MAKE) all
 
 $(BUILD):
-	@printf "\033[1;34m"
+	@printf "$(BLUE)$(BOLD)"
 	@$(ECHO) 'Creation of $@ directory 📁'
-	@printf "\033[0m"
+	@printf "$(END)"
 	@mkdir $@ $(DIRS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD)
-	@printf "\033[1;33m"
+	@printf "$(YELLOW)$(BOLD)"
 	@$(ECHO) 'Compilation of $<'
-	@printf "\033[0m"
+	@printf "$(END)"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
