@@ -1,16 +1,16 @@
 ##### FONT APPEARANCE ##########################################################
-END=$'\033[0m
-BOLD=$'\033[1m
-UNDER=$'\033[4m
-REV=$'\033[7m
-GREY=$'\033[30m
-RED=$'\033[31m
-GREEN=$'\033[32m
-YELLOW=$'\033[33m
-BLUE=$'\033[34m
-PURPLE=$'\033[35m
-CYAN=$'\033[36m
-WHITE=$'\033[37m
+END		=$'\033[0m
+BOLD	=$'\033[1m
+UNDER	=$'\033[4m
+REV		=$'\033[7m
+GREY	=$'\033[30m
+RED		=$'\033[31m
+GREEN	=$'\033[32m
+YELLOW	=$'\033[33m
+BLUE	=$'\033[34m
+PURPLE	=$'\033[35m
+CYAN	=$'\033[36m
+WHITE	=$'\033[37m
 
 ##### PROCESS CALCULATOR #######################################################
 ifneq ($(words $(MAKECMDGOALS)),1)
@@ -25,11 +25,6 @@ ifndef ECHO
 	C = $(words $N)$(eval N := x $N)
 	ECHO = printf "%3d %% - %s\n" `expr $C '*' 100 / $T`
 endif
-
-##### COMPILATION ##############################################################
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
-IFLAGS	= -I ./inc
 
 ##### DIRECTORIES ##############################################################
 BUILD	= .build
@@ -113,6 +108,11 @@ SUB_SRC	:= ft_atoi.c \
 SRC		+= $(addprefix string/, $(SUB_SRC))
 
 OBJ		= $(SRC:%.c=$(OBJ_DIR)/%.o)
+
+##### COMPILATION ##############################################################
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+IFLAGS	= -I $(INC_DIR)
 
 NAME	= libft.a
 
