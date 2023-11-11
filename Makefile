@@ -88,6 +88,7 @@ SUB_SRC	:= ft_putchar.c \
 SRC		+= $(addprefix stdio/, $(SUB_SRC))
 
 SUB_SRC	:= ft_atoi.c \
+			ft_atol.c \
             ft_itoa.c \
             ft_split.c \
             ft_strchr.c \

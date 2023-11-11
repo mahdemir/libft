@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:05:53 by mademir       #+#    #+#                 */
-/*   Updated: 2023/10/28 18:05:16 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/11 16:33:01 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,9 @@ void	ft_putstr_fd(char *s, int fd);
 
 // Converts the string str to integer representation.
 int		ft_atoi(const char *str);
+
+// Converts the string str to long integer representation.
+long	ft_atol(const char *str);
 
 // Converts an int to a string, and returns a pointer to it.
 char	*ft_itoa(int n);
