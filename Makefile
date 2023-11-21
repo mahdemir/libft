@@ -70,7 +70,7 @@ SRC		+= $(addprefix list/, $(SUB_SRC))
 
 SUB_SRC	:= ft_bzero.c \
             ft_calloc.c \
-			ft_free_matrix.c \
+			ft_matrix_free.c \
             ft_memchr.c \
             ft_memcmp.c \
             ft_memcpy.c \
@@ -89,6 +89,7 @@ SRC		+= $(addprefix stdio/, $(SUB_SRC))
 
 SUB_SRC	:= ft_atoi.c \
 			ft_atol.c \
+			ft_matrix_height.c \
             ft_itoa.c \
             ft_split.c \
             ft_strchr.c \
