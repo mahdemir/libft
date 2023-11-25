@@ -117,6 +117,7 @@ CFLAGS	= -Wall -Wextra -Werror
 IFLAGS	= -I $(INC_DIR)
 
 NAME	= libft.a
+CHECKSUM_FILE := $(BUILD)/last_build_checksum
 
 ##### RULES ####################################################################
 $(NAME): $(OBJ)
@@ -126,6 +127,12 @@ $(NAME): $(OBJ)
 	@ar -rcs $@ $^
 
 all: $(NAME)
+	@if [ -e "$(CHECKSUM_FILE)" ] && [ "$$(cat $(CHECKSUM_FILE))" = "$$(make checksum)" ]; then \
+		echo "${BOLD}${GREEN}[ OK ]  Libft is already built!${END}"; \
+	else \
+		make checksum > "$(CHECKSUM_FILE)"; \
+		echo "\n${BOLD}${GREEN}[ OK ]  Libft built successfully! 🎉${END}"; \
+	fi \
 
 clean:
 ifeq (re, $(filter re, $(MAKECMDGOALS)))
@@ -160,6 +167,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD)
 	@$(ECHO) 'Compilation of $<'
 	@printf "$(END)"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+
+checksum:
+	@find $(SRC_DIR) -name '*.c' | xargs cat | shasum -a 256 | cut -d ' ' -f 1
 
 .PHONY: all clean fclean re
 
