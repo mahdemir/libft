@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/03 14:39:21 by mademir       #+#    #+#                 */
-/*   Updated: 2023/11/21 16:47:08 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/25 14:48:09 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	word_count(const char *s, char c)
 	return (count);
 }
 
-static void	fill_arr(char **arr, const char *s, char c)
+static void	fill_arr(char **matrix, const char *s, char c)
 {
 	int		i;
 	int		j;
@@ -50,10 +50,10 @@ static void	fill_arr(char **arr, const char *s, char c)
 			len++;
 		}
 		if (len)
-			arr[j] = malloc(len + 1);
-		if (!arr[j])
-			arr[j] = NULL;
-		ft_strlcpy(arr[j++], s + (i - len), len + 1);
+			matrix[j] = malloc(len + 1);
+		if (!matrix[j])
+			matrix[j] = NULL;
+		ft_strlcpy(matrix[j++], s + (i - len), len + 1);
 	}
 }
 
@@ -61,22 +61,22 @@ char	**ft_split(char const *s, char c)
 {
 	int		j;
 	int		words;
-	char	**arr;
+	char	**matrix;
 
 	if (!s)
 		return (NULL);
 	words = word_count(s, c);
-	arr = malloc((words + 1) * sizeof(char *));
-	if (!arr)
+	matrix = malloc((words + 1) * sizeof(char *));
+	if (!matrix)
 		return (NULL);
-	arr[words] = NULL;
-	fill_arr(arr, s, c);
+	matrix[words] = NULL;
+	fill_arr(matrix, s, c);
 	j = 0;
 	while (j < words)
 	{
-		if (!arr[j])
-			ft_matrix_free((void **)arr);
+		if (!matrix[j])
+			ft_matrix_free((void **)matrix, words);
 		j++;
 	}
-	return (arr);
+	return (matrix);
 }

@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:05:53 by mademir       #+#    #+#                 */
-/*   Updated: 2023/11/21 16:54:56 by mademir       ########   odam.nl         */
+/*   Updated: 2023/11/25 14:59:29 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,29 @@ int		ft_tolower(int c);
 
 /* Converts lowercase letters to uppercase. */
 int		ft_toupper(int c);
+
+/********** INPUT_OUTPUT ******************************************************/
+
+/* Outputs a character to standard output. */
+void	ft_putchar(char c);
+
+/* Outputs a string to given file descriptor. */
+void	ft_putchar_fd(char c, int fd);
+
+/* Outputs a string with a newline to given file descriptor. */
+void	ft_putendl_fd(char *s, int fd);
+
+/* Outputs an integer to standard output. */
+void	ft_putnbr_fd(int n, int fd);
+
+/* Outputs an integer to given file descriptor. */
+void	ft_putnbr_fd(int n, int fd);
+
+/* Outputs a string to standard output. */
+void	ft_putstr(char *s);
+
+/* Outputs a string to given file descriptor. */
+void	ft_putstr_fd(char *s, int fd);
 
 /********** LIST **************************************************************/
 
@@ -98,7 +121,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 
 /* Free complete matrix */
-void	ft_matrix_free(void **arr);
+void	ft_matrix_free(void **arr, int height);
 
 /* Locates the first occurrence of c in s. */
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -115,29 +138,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 /* Writes len bytes of value c to b. */
 void	*ft_memset(void *b, int c, size_t len);
 
-/********** STDIO *************************************************************/
-
-/* Outputs a character to standard output. */
-void	ft_putchar(char c);
-
-/* Outputs a string to given file descriptor. */
-void	ft_putchar_fd(char c, int fd);
-
-/* Outputs a string with a newline to given file descriptor. */
-void	ft_putendl_fd(char *s, int fd);
-
-/* Outputs an integer to standard output. */
-void	ft_putnbr_fd(int n, int fd);
-
-/* Outputs an integer to given file descriptor. */
-void	ft_putnbr_fd(int n, int fd);
-
-/* Outputs a string to standard output. */
-void	ft_putstr(char *s);
-
-/* Outputs a string to given file descriptor. */
-void	ft_putstr_fd(char *s, int fd);
-
 /********** STRING ************************************************************/
 
 /* Converts the string str to integer representation. */
@@ -146,8 +146,8 @@ int		ft_atoi(const char *str);
 /* Converts the string str to long integer representation. */
 long	ft_atol(const char *str);
 
-/* Counts the height of a matrix and returns it. */
-size_t	ft_matrix_height(void **arr);
+/* Counts the height of a null-terminated matrix and returns it. */
+void	ft_matrix_free(void **matrix, int height);
 
 /* Converts an int to a string, and returns a pointer to it. */
 char	*ft_itoa(int n);

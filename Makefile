@@ -32,11 +32,10 @@ OBJ_DIR	= $(BUILD)/obj
 SRC_DIR	= ./src
 INC_DIR	= ./inc
 SUB_DIR	+= ctype \
-			ft_printf \
-			get_next_line \
+			input_output/ft_printf \
+			input_output/get_next_line \
 			list \
 			memory \
-			stdio \
 			string
 DIRS	:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
@@ -48,14 +47,6 @@ SUB_SRC	:= ft_isalnum.c \
             ft_tolower.c \
             ft_toupper.c
 SRC		:= $(addprefix ctype/, $(SUB_SRC))
-
-SUB_SRC	:= ft_printf.c \
-            ft_printf_utils.c
-SRC		+= $(addprefix ft_printf/, $(SUB_SRC))
-
-SUB_SRC	:= get_next_line.c \
-            get_next_line_utils.c
-SRC		+= $(addprefix get_next_line/, $(SUB_SRC))
 
 SUB_SRC	:= ft_lstadd_back.c \
             ft_lstadd_front.c \
@@ -85,12 +76,18 @@ SUB_SRC	:= ft_putchar.c \
             ft_putnbr_fd.c \
 			ft_putstr.c \
             ft_putstr_fd.c
-SRC		+= $(addprefix stdio/, $(SUB_SRC))
+SRC		+= $(addprefix input_output/, $(SUB_SRC))
+SUB_PF	:= ft_printf.c \
+            ft_printf_utils.c
+SRC		+= $(addprefix input_output/ft_printf/, $(SUB_PF))
+SUB_GNL	:= get_next_line.c \
+            get_next_line_utils.c
+SRC		+= $(addprefix input_output/get_next_line/, $(SUB_GNL))
 
 SUB_SRC	:= ft_atoi.c \
 			ft_atol.c \
-			ft_matrix_height.c \
             ft_itoa.c \
+			ft_matrix_height.c \
             ft_split.c \
             ft_strchr.c \
             ft_strrchr.c \
@@ -128,7 +125,7 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 	@if [ -e "$(CHECKSUM_FILE)" ] && [ "$$(cat $(CHECKSUM_FILE))" = "$$(make checksum)" ]; then \
-		echo "${BOLD}${GREEN}[ OK ]  Libft is already built!${END}"; \
+		echo "${BOLD}${GREEN}[ OK ]  Libft is already built! ✌️${END}"; \
 	else \
 		make checksum > "$(CHECKSUM_FILE)"; \
 		echo "\n${BOLD}${GREEN}[ OK ]  Libft built successfully! 🎉${END}"; \
@@ -160,7 +157,7 @@ $(BUILD):
 	@printf "$(BLUE)$(BOLD)"
 	@$(ECHO) 'Creation of $@ directory 📁'
 	@printf "$(END)"
-	@mkdir $@ $(DIRS)
+	@mkdir -p $@ $(DIRS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD)
 	@printf "$(YELLOW)$(BOLD)"

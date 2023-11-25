@@ -1,6 +1,9 @@
 # Mac OS cache files
 .DS_Store
 
+# Visual Studio Code config files
+.vscode/
+
 # Prerequisites
 *.d
 
