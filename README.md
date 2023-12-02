@@ -30,6 +30,7 @@ ft_toupper.c | ft_putstr.c      | ft_lstmap.c       | ft_memmove.c      | ft_str
 ||||                                                                    | ft_strstr.c
 ||||                                                                    | ft_strtrim.c
 ||||                                                                    | ft_substr.c
+||||                                                                    | ft_strcharjoin.c
 
 Notes:
 - Most of the the files and function names are namespaced with an **ft** in front. It stands for Fourty Two

@@ -89,6 +89,7 @@ SUB_SRC	:= ft_atoi.c \
             ft_itoa.c \
 			ft_matrix_height.c \
             ft_split.c \
+			ft_strcharjoin.c \
             ft_strchr.c \
             ft_strrchr.c \
             ft_strdup.c \
@@ -125,29 +126,18 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 	@if [ -e "$(CHECKSUM_FILE)" ] && [ "$$(cat $(CHECKSUM_FILE))" = "$$(make checksum)" ]; then \
-		echo "${BOLD}${GREEN}[ OK ]  Libft is already built! ✌️${END}"; \
+		echo "${BOLD}${GREEN}[ OK ]  Libft is already built!${END}"; \
 	else \
 		make checksum > "$(CHECKSUM_FILE)"; \
 		echo "\n${BOLD}${GREEN}[ OK ]  Libft built successfully! 🎉${END}"; \
 	fi \
 
 clean:
-ifeq (re, $(filter re, $(MAKECMDGOALS)))
-	@echo "${BOLD}${RED}  0 % - Deleting $(BUILD) directory ❌${END}"
-else ifeq (clean, $(filter clean, $(MAKECMDGOALS)))
-	@echo "${BOLD}${RED}100 % - Deleting $(BUILD) directory ❌${END}"
-else ifeq (fclean, $(filter fclean, $(MAKECMDGOALS)))
-	@echo "${BOLD}${RED} 50 % - Deleting $(BUILD) directory ❌${END}"
-endif
+	@echo "${BOLD}${PURPLE}> All objects files have been deleted ❌${END}"
 	@rm -rf $(BUILD)
 
 fclean: clean
-ifeq (re, $(filter re, $(MAKECMDGOALS)))
-
-	@echo "${BOLD}${RED}  0 % - Deleting $(NAME) library ❌${END}"
-else ifeq (fclean, $(filter fclean, $(MAKECMDGOALS)))
-	@echo "${BOLD}${RED}100 % - Deleting $(NAME) library ❌${END}"
-endif
+	@echo "${BOLD}${RED}> Cleaning has been done ❌${END}"
 	@rm -rf $(NAME) a.out
 
 re: fclean
