@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:05:53 by mademir       #+#    #+#                 */
-/*   Updated: 2023/11/25 14:59:29 by mademir       ########   odam.nl         */
+/*   Updated: 2023/12/02 17:33:55 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
 
 /* Counts the height of a null-terminated matrix and returns it. */
-void	ft_matrix_free(void **matrix, int height);
+size_t	ft_matrix_height(void **matrix);
 
 /* Converts an int to a string, and returns a pointer to it. */
 char	*ft_itoa(int n);
@@ -158,6 +158,13 @@ char	*ft_itoa(int n);
  * The array is ended by a NULL pointer.
  * Returns NULL on error. */
 char	**ft_split(char const *s, char c);
+
+/* Allocates and returns a new string,
+ * result of the concatenation of string s1 and char c.
+ * The passed arguments can be NULL.
+ * Frees string s1 before returning new string.
+ * Returns NULL on error. */
+char	*ft_strcharjoin(char *s1, char c);
 
 /* Locates the first occurrence of c (converted to a char) in the string
  * pointed to by s. The terminating null character is considered to be part
