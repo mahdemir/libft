@@ -119,7 +119,7 @@ CHECKSUM_FILE := $(BUILD)/last_build_checksum
 
 ##### RULES ####################################################################
 $(NAME): $(OBJ)
-	@printf "$(GREEN)$(BOLD)"	
+	@printf "$(BLUE)$(BOLD)"	
 	@$(ECHO) 'Creation of $@ 🏁'
 	@printf "$(END)"
 	@ar -rcs $@ $^
@@ -133,11 +133,11 @@ all: $(NAME)
 	fi \
 
 clean:
-	@echo "${BOLD}${PURPLE}> All objects files have been deleted ❌${END}"
+	@echo "${BOLD}${PURPLE}    > - All objects files have been deleted ❌${END}"
 	@rm -rf $(BUILD)
 
 fclean: clean
-	@echo "${BOLD}${RED}> Cleaning has been done ❌${END}"
+	@echo "${BOLD}${RED}    > - Cleaning has been done ❌${END}"
 	@rm -rf $(NAME) a.out
 
 re: fclean
