@@ -121,7 +121,7 @@ CHECKSUM_FILE := $(BUILD)/last_build_checksum
 $(NAME): $(OBJ)
 	@printf "$(BLUE)$(BOLD)"	
 	@$(ECHO) 'Creation of $@ 🏁'
-	@printf "$(END)"
+	@printf "\n$(END)"
 	@ar -rcs $@ $^
 
 all: $(NAME)
@@ -129,7 +129,7 @@ all: $(NAME)
 		echo "${BOLD}${GREEN}[ OK ]  Libft is already built!${END}"; \
 	else \
 		make checksum > "$(CHECKSUM_FILE)"; \
-		echo "\n${BOLD}${GREEN}[ OK ]  Libft built successfully! 🎉${END}"; \
+		echo "${BOLD}${GREEN}[ OK ]  Libft built successfully! 🎉${END}"; \
 	fi \
 
 clean:
@@ -156,7 +156,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 checksum:
-	@find $(SRC_DIR) -name '*.c' | xargs cat | shasum -a 256 | cut -d ' ' -f 1
+	@find $(SRC_DIR) -name '*.c' | xargs cat ; find $(INC_DIR) -name '*.h' | xargs cat | shasum -a 256 | cut -d ' ' -f 1
 
 .PHONY: all clean fclean re
 
