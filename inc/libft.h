@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:05:53 by mademir       #+#    #+#                 */
-/*   Updated: 2023/12/30 07:50:34 by mademir       ########   odam.nl         */
+/*   Updated: 2023/12/30 07:55:17 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,11 @@ void	ft_bzero(void *s, size_t n);
  * Returns NULL on error. */
 void	*ft_calloc(size_t count, size_t size);
 
-/* Free complete matrix */
+/* Free complete terminated matrix */
 void	ft_matrix_free(void **matrix);
+
+/* Free matrix up to and including given height */
+void	ft_matrix_free_h(void **matrix, int height);
 
 /* Locates the first occurrence of c in s. */
 void	*ft_memchr(const void *s, int c, size_t n);
