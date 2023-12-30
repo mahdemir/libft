@@ -6,9 +6,11 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/30 07:55:55 by mademir       #+#    #+#                 */
-/*   Updated: 2023/12/30 07:56:28 by mademir       ########   odam.nl         */
+/*   Updated: 2023/12/30 08:39:22 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_matrix_free_h(void **matrix, int height)
 {
