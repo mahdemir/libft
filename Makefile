@@ -62,6 +62,7 @@ SRC		+= $(addprefix list/, $(SUB_SRC))
 SUB_SRC	:= ft_bzero.c \
             ft_calloc.c \
 			ft_matrix_free.c \
+			ft_matrix_free_h.c \
             ft_memchr.c \
             ft_memcmp.c \
             ft_memcpy.c \
