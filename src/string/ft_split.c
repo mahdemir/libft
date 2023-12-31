@@ -6,7 +6,7 @@
 /*   By: mademir <mademir@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/03 14:39:21 by mademir       #+#    #+#                 */
-/*   Updated: 2023/12/30 07:48:38 by mademir       ########   odam.nl         */
+/*   Updated: 2023/12/31 14:27:46 by mademir       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 	while (j < words)
 	{
 		if (!matrix[j])
-			ft_matrix_free((void **)matrix);
+			ft_matrix_free_h((void **)matrix, words);
 		j++;
 	}
 	return (matrix);
