@@ -65,3 +65,79 @@ You have to tell the compiler where your library resides and which library it is
 Now just run your executable and enjoy!
 
 That's it! If you're having some problems, just send me a tweet. If you think your problem is due to my code or this README, create a new issue. I'll definitely check it out.
+
+## 🌳 Folder structure
+```
+.
+├── Makefile
+├── README.md
+├── inc
+│   ├── ft_printf.h
+│   ├── get_next_line.h
+│   └── libft.h
+└── src
+    ├── ctype
+    │   ├── ft_isalnum.c
+    │   ├── ft_isalpha.c
+    │   ├── ft_isascii.c
+    │   ├── ft_isdigit.c
+    │   ├── ft_isprint.c
+    │   ├── ft_tolower.c
+    │   └── ft_toupper.c
+    ├── input_output
+    │   ├── ft_printf
+    │   │   ├── ft_printf.c
+    │   │   └── ft_printf_utils.c
+    │   ├── ft_putchar.c
+    │   ├── ft_putchar_fd.c
+    │   ├── ft_putendl_fd.c
+    │   ├── ft_putnbr.c
+    │   ├── ft_putnbr_fd.c
+    │   ├── ft_putstr.c
+    │   ├── ft_putstr_fd.c
+    │   └── get_next_line
+    │       ├── get_next_line.c
+    │       └── get_next_line_utils.c
+    ├── list
+    │   ├── ft_lstadd_back.c
+    │   ├── ft_lstadd_front.c
+    │   ├── ft_lstclear.c
+    │   ├── ft_lstdelone.c
+    │   ├── ft_lstiter.c
+    │   ├── ft_lstlast.c
+    │   ├── ft_lstmap.c
+    │   ├── ft_lstnew.c
+    │   └── ft_lstsize.c
+    ├── memory
+    │   ├── ft_bzero.c
+    │   ├── ft_calloc.c
+    │   ├── ft_matrix_free.c
+    │   ├── ft_matrix_free_h.c
+    │   ├── ft_memchr.c
+    │   ├── ft_memcmp.c
+    │   ├── ft_memcpy.c
+    │   ├── ft_memmove.c
+    │   └── ft_memset.c
+    └── string
+        ├── ft_atoi.c
+        ├── ft_atol.c
+        ├── ft_itoa.c
+        ├── ft_matrix_height.c
+        ├── ft_split.c
+        ├── ft_strcharjoin.c
+        ├── ft_strchr.c
+        ├── ft_strdup.c
+        ├── ft_striteri.c
+        ├── ft_strjoin.c
+        ├── ft_strlcat.c
+        ├── ft_strlcpy.c
+        ├── ft_strlen.c
+        ├── ft_strmapi.c
+        ├── ft_strncmp.c
+        ├── ft_strnstr.c
+        ├── ft_strrchr.c
+        ├── ft_strrstr.c
+        ├── ft_strstr.c
+        ├── ft_strtrim.c
+        └── ft_substr.c
+```
